@@ -9,21 +9,8 @@ import {
 } from "./Screen.styled";
 
 export const Screen = () => {
-  const { wordScreenIndex, arrayWords, word, value, points, setPoints } =
+  const { wordScreenIndex, arrayWords, word, handleChangeColor, points } =
     useGlobalContext() as any;
-  // let word = arr;
-
-  const handleChangeColor = (i: number) => {
-    if (i < value.length) {
-      if (value[i] === word[i]) {
-        return "ok";
-      } else {
-        return "error";
-      }
-    }
-    return "";
-  };
-  // console.log(wordScreenIndex, arrayWords);
 
   return (
     <StyledScreenContainer>
@@ -46,8 +33,6 @@ export const Screen = () => {
       ) : (
         <div>YOU WIN! RETRY? </div>
       )}
-
-      {/* <h1>{value}</h1> */}
     </StyledScreenContainer>
   );
 };
