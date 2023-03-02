@@ -5,7 +5,7 @@ export const StyledQwertyGame = styled.div`
   flex-direction: column;
   background-color: aliceblue;
   padding: 30px 50px;
-  /* align-items: center; */
   gap: 50px;
   height: 100vh;
+  min-width: 768px;
 `;

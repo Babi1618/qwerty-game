@@ -18,3 +18,10 @@ export const StyledScreenTimerAndPoints = styled.div`
 `;
 
 export const StyledScreenWords = styled.div``;
+
+export const StyledScreenWord = styled.div`
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+`;
+export const StyledScreenLetter = styled.span``;
