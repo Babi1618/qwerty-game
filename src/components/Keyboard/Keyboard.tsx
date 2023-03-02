@@ -2,7 +2,7 @@ import { qwertyItalian } from "../../utils/qwertyItaliansLetters";
 import { Button } from "../Button/Button";
 import { StyledKeyboardContainer, StyledKeyboardGrid } from "./Keyboard.styled";
 
-export const Keyboard = ({setLetterKey}:any) => {
+export const Keyboard = () => {
   return (
     <StyledKeyboardContainer>
       <StyledKeyboardGrid>
@@ -11,7 +11,6 @@ export const Keyboard = ({setLetterKey}:any) => {
             <Button
               key={el}
               letter={el}
-              setLetterKey={setLetterKey}
               className={
                 el === "A"
                   ? `first-item-second-row`

@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
 import { Keyboard } from "../../components/Keyboard/Keyboard";
 import { Screen } from "../../components/Screen/Screen";
+import { useGlobalContext } from "../../context/GlobalContext";
 import { StyledQwertyGame } from "./QwertyGame.styled";
 
 export const QwertyGame = () => {
-  const word = "Parola";
-  const array = word.split("");
-  const [letterScreen, setLetterScreen] = useState<number>(0);
-  const [letterKey, setLetterKey] = useState("");
-
+  const { wordScreenIndex } = useGlobalContext() as any;
+  // const arrayWords = ["QWE", "CIAO"];
+  // const arr = arrayWords[0].split("");
+  // console.log(arr);
+  const { letterScreenIndex, arr, value, setValue } = useGlobalContext() as any;
   useEffect(() => {
-    console.log(letterKey);
-  }, [letterKey]);
-  
+    console.log("value", value);
+  }, [value]);
   return (
     <StyledQwertyGame>
-      <Screen word={array} />
-      <Keyboard setLetterKey={setLetterKey} />
+      <Screen />
+      <Keyboard />
     </StyledQwertyGame>
   );
 };

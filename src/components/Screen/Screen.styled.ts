@@ -23,5 +23,9 @@ export const StyledScreenWord = styled.div`
   font-size: 20px;
   font-weight: 900;
   text-transform: uppercase;
+  color: grey;
 `;
-export const StyledScreenLetter = styled.span``;
+export const StyledScreenLetter = styled.span<any>`
+  color: ${({ type }) =>
+    type === "ok" ? "green" : type === "error" ? "red" : ""};
+`;
