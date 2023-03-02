@@ -19,9 +19,6 @@ export const Button = ({ letter, className }: any) => {
         value2.pop();
       }
     if (arr[letterScreenIndex] === letter) {
-    //   if (value.length > letterScreenIndex) {
-    //     value2.pop();
-    //   }
       setValue([...value2, letter]);
       setLetterScreenIndex((prev: number) => prev + 1);
     } else {

@@ -9,11 +9,11 @@ import {
 } from "./Screen.styled";
 
 export const Screen = () => {
-  const { letterScreenIndex, arr, value, letterKey } =
+  const { wordScreenIndex, arrayWords, arr, value, letterKey } =
     useGlobalContext() as any;
-  const word = arr;
+  let word = arr;
 
-  const handleChangeColor = (el: string, i: number) => {
+  const handleChangeColor = (i: number) => {
     if (i < value.length) {
       if (value[i] === word[i]) {
         return "ok";
@@ -23,6 +23,7 @@ export const Screen = () => {
     }
     return "";
   };
+  // console.log(wordScreenIndex, arrayWords);
 
   return (
     <StyledScreenContainer>
@@ -30,18 +31,23 @@ export const Screen = () => {
         <div>timer</div>
         <div>punteggio</div>
       </StyledScreenTimerAndPoints>
-      <StyledScreenWords>
-        <StyledScreenWord>
-          {word.map((el: string, i: number) => {
-            return (
-              <StyledScreenLetter key={i} type={handleChangeColor(el, i)}>
-                {el}
-              </StyledScreenLetter>
-            );
-          })}
-        </StyledScreenWord>
-        <h1>{value}</h1>
-      </StyledScreenWords>
+      {wordScreenIndex < arrayWords.length - 1 ? (
+        <StyledScreenWords>
+          <StyledScreenWord>
+            {arr.map((el: string, i: number) => {
+              return (
+                <StyledScreenLetter key={i} type={handleChangeColor(i)}>
+                  {el}
+                </StyledScreenLetter>
+              );
+            })}
+          </StyledScreenWord>
+        </StyledScreenWords>
+      ) : (
+        <div>YOU WIN! RETRY? </div>
+      )}
+
+      {/* <h1>{value}</h1> */}
     </StyledScreenContainer>
   );
 };
