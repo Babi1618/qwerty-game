@@ -14,9 +14,18 @@ export const Button = ({ letter, className }: any) => {
 
   const handleClick = (letter: string) => {
     // setLetterKey(letter);
+    const value2=value
+    if (value.length > letterScreenIndex) {
+        value2.pop();
+      }
     if (arr[letterScreenIndex] === letter) {
-      setValue([...value, letter]);
+    //   if (value.length > letterScreenIndex) {
+    //     value2.pop();
+    //   }
+      setValue([...value2, letter]);
       setLetterScreenIndex((prev: number) => prev + 1);
+    } else {
+      setValue([...value2, letter]);
     }
   };
 

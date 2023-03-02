@@ -9,13 +9,17 @@ import {
 } from "./Screen.styled";
 
 export const Screen = () => {
-  const { wordScreenIndex, arr, value, letterKey } = useGlobalContext() as any;
+  const { letterScreenIndex, arr, value, letterKey } =
+    useGlobalContext() as any;
   const word = arr;
 
   const handleChangeColor = (el: string, i: number) => {
-    console.log(letterKey);
-    if (value[i] === word[i]) {
-      return "ok";
+    if (i < value.length) {
+      if (value[i] === word[i]) {
+        return "ok";
+      } else {
+        return "error";
+      }
     }
     return "";
   };

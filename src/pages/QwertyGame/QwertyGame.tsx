@@ -9,9 +9,10 @@ export const QwertyGame = () => {
   // const arrayWords = ["QWE", "CIAO"];
   // const arr = arrayWords[0].split("");
   // console.log(arr);
-  const { letterScreenIndex, arr, value, setValue } = useGlobalContext() as any;
+  const { letterScreenIndex, arr, value, setValue, letterKey } = useGlobalContext() as any;
   useEffect(() => {
-    console.log("value", value);
+    // console.log("value", value);
+    // console.log(letterKey)
   }, [value]);
   return (
     <StyledQwertyGame>

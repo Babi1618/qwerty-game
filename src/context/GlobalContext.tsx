@@ -9,7 +9,7 @@ import {
 export const GlobalContext = createContext({});
 
 export const GlobalContextProvider = (props: PropsWithChildren) => {
-  const arrayWords = ["QWE", "CIAO"];
+  const arrayWords = ["QWERERE", "CIAO"];
   const arr = arrayWords[0].split("");
   const [letterScreenIndex, setLetterScreenIndex] = useState<number>(0);
   const [letterKey, setLetterKey] = useState("");
