@@ -6,23 +6,28 @@ export const Button = ({ letter, className }: any) => {
   const {
     letterScreenIndex,
     setLetterScreenIndex,
-    arr,
+    word,
     value,
     setValue,
-    setLetterKey,
+    setPoints,
   } = useGlobalContext() as any;
 
   const handleClick = (letter: string) => {
-    // setLetterKey(letter);
-    const value2=value
+    countPoints(word, letterScreenIndex, letter);
     if (value.length > letterScreenIndex) {
-        value2.pop();
-      }
-    if (arr[letterScreenIndex] === letter) {
-      setValue([...value2, letter]);
+      value.pop();
+    }
+    setValue([...value, letter]);
+    if (word[letterScreenIndex] === letter) {
       setLetterScreenIndex((prev: number) => prev + 1);
+    }
+  };
+
+  const countPoints = (word: any, index: number, letter: string) => {
+    if (word[letterScreenIndex] === letter) {
+      setPoints((prev: number) => prev + 1);
     } else {
-      setValue([...value2, letter]);
+      setPoints((prev: number) => prev - 1);
     }
   };
 

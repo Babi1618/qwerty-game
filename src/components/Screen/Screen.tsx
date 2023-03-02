@@ -9,9 +9,9 @@ import {
 } from "./Screen.styled";
 
 export const Screen = () => {
-  const { wordScreenIndex, arrayWords, arr, value, letterKey } =
+  const { wordScreenIndex, arrayWords, word, value, points, setPoints } =
     useGlobalContext() as any;
-  let word = arr;
+  // let word = arr;
 
   const handleChangeColor = (i: number) => {
     if (i < value.length) {
@@ -29,12 +29,12 @@ export const Screen = () => {
     <StyledScreenContainer>
       <StyledScreenTimerAndPoints>
         <div>timer</div>
-        <div>punteggio</div>
+        <div>punteggio {points}</div>
       </StyledScreenTimerAndPoints>
       {wordScreenIndex < arrayWords.length - 1 ? (
         <StyledScreenWords>
           <StyledScreenWord>
-            {arr.map((el: string, i: number) => {
+            {word.map((el: string, i: number) => {
               return (
                 <StyledScreenLetter key={i} type={handleChangeColor(i)}>
                   {el}
