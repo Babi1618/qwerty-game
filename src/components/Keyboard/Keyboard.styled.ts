@@ -14,11 +14,9 @@ export const StyledKeyboardGrid = styled.div`
     place-self: center;
   }
   .first-item-b {
-    color: green;
     grid-column: 2;
   }
   .first-item-c {
-    color: green;
     grid-column: 4;
   }
 `;
