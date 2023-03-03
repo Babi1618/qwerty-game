@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useGlobalContext } from "../../context/GlobalContext";
 import { StyledButton, StyledButtonContainer } from "./Button.styled";
 
