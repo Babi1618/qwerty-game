@@ -21,7 +21,6 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
   const [greatOpen, setGreatOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log(arrayWords[wordScreenIndex]);
     if (wordScreenIndex < arrayWords.length) {
       setWord(arrayWords[wordScreenIndex].split(""));
     }
@@ -33,7 +32,7 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
 
   const changeLetter = useCallback(
     (arr: string[], letterScreenIndex: number) => {
-      if (arr.length === letterScreenIndex) {
+      if (arr.length === letterScreenIndex && arr.length!==0) {
         setGreatOpen(true);
         setLetterScreenIndex(0);
         setValue([]);
@@ -47,12 +46,33 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
     },
     []
   );
-  useEffect(() => {
-    setTimeout(() => {
-      setArrayWords(["QWE", "W", "E", "R"]);
-    }, 1000);
-  }, []);
+  const fetchWord = async () => {
+    const w = await fetch("https://random-word-api.herokuapp.com/word").then(
+      (res) => res.json()
+    );
+    return w;
+  };
+  const getWords = async () => {
+    const result =[]
+    for (let i=0; i<5; i++){
+      const res = await fetchWord();
+      console.log(res);
+      result.push(res[0])
+    }
+    // console.log(result)
+    setArrayWords(result)
+  };
 
+  useEffect(() => {
+    getWords()
+  }, []);
+  useEffect(() => {
+    // setTimeout(() => {
+    //   setArrayWords(["QWE", "W", "E", "R"]);
+    // }, 1000);
+    // getWords()
+    // console.log(arrayWords)
+  }, [arrayWords]);
   return (
     <GlobalContext.Provider
       value={{
