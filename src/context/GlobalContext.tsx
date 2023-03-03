@@ -9,7 +9,8 @@ import {
 export const GlobalContext = createContext({});
 
 export const GlobalContextProvider = (props: PropsWithChildren) => {
-  const arrayWords = ["QWE", "W", "E", "R"];
+  // const arrayWords = ["QWE", "W", "E", "R"];
+  const [arrayWords, setArrayWords] = useState([""]);
   const [letterScreenIndex, setLetterScreenIndex] = useState<number>(0);
   const [value, setValue] = useState<string[]>([]);
   const [wordScreenIndex, setWordScreenIndex] = useState<number>(0);
@@ -24,7 +25,7 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
     if (wordScreenIndex < arrayWords.length) {
       setWord(arrayWords[wordScreenIndex].split(""));
     }
-  }, [wordScreenIndex]);
+  }, [wordScreenIndex, arrayWords]);
 
   useEffect(() => {
     changeLetter(word, letterScreenIndex);
@@ -46,6 +47,11 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
     },
     []
   );
+  useEffect(() => {
+    setTimeout(() => {
+      setArrayWords(["QWE", "W", "E", "R"]);
+    }, 1000);
+  }, []);
 
   return (
     <GlobalContext.Provider
