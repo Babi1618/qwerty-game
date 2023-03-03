@@ -9,4 +9,5 @@ export const StyledQwertyGame = styled.div`
   gap: 50px;
   height: 100vh;
   min-width: 768px;
+  justify-content: space-between;
 `;

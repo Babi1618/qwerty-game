@@ -13,25 +13,30 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
   const [letterScreenIndex, setLetterScreenIndex] = useState<number>(0);
   const [value, setValue] = useState<string[]>([]);
   const [wordScreenIndex, setWordScreenIndex] = useState<number>(0);
-  const word = arrayWords[wordScreenIndex]
-    ? arrayWords[wordScreenIndex].split("")
-    : [];
+  const [word, setWord] = useState(arrayWords[0].split(""));
   const [points, setPoints] = useState(0);
   const [seconds, setSeconds] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
   const [greatOpen, setGreatOpen] = useState<boolean>(false);
 
   useEffect(() => {
+    console.log(arrayWords[wordScreenIndex]);
+    if (wordScreenIndex < arrayWords.length) {
+      setWord(arrayWords[wordScreenIndex].split(""));
+    }
+  }, [wordScreenIndex]);
+
+  useEffect(() => {
     changeLetter(word, letterScreenIndex);
-  }, [value]);
+  }, [letterScreenIndex]);
 
   const changeLetter = useCallback(
     (arr: string[], letterScreenIndex: number) => {
       if (arr.length === letterScreenIndex) {
         setGreatOpen(true);
+        setLetterScreenIndex(0);
+        setValue([]);
         setTimeout(() => {
-          setValue([]);
-          setLetterScreenIndex(0);
           if (wordScreenIndex <= arrayWords.length - 1) {
             setWordScreenIndex((prev: number) => prev + 1);
           }
@@ -62,6 +67,7 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
         setMinutes,
         greatOpen,
         setGreatOpen,
+        // word, setWord
       }}
     >
       {props.children}

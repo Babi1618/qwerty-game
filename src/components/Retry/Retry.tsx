@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useGlobalContext } from "../../context/GlobalContext";
+import { StyledRetryButton, StyledRetryContainer } from "./Retry.styled";
 
 export const Retry = () => {
   const {
@@ -17,20 +18,21 @@ export const Retry = () => {
     setFinalTime({ minutes: minutes, seconds: seconds });
   }, []);
 
-  const handleRetry = () => {
+  const handleRetry = useCallback(() => {
     setWordScreenIndex(0);
     setPoints(0);
     setMinutes(0);
     setSeconds(0);
     setFinalTime({ minutes: 0, seconds: 0 });
-  };
+  }, []);
   return (
-    <div>
-      YOU WIN! <button onClick={handleRetry}>RETRY</button>
+    <StyledRetryContainer>
+      <div className="title">YOU WIN! </div>
       <div>
-        YOU MAKE {points} POINTS IN {finalTime.minutes}MIN AND
-        {finalTime.seconds} SEC
+        YOU MAKE {points} POINTS IN {finalTime.minutes} MINUTES AND{" "}
+        {finalTime.seconds} SECONDS!
       </div>
-    </div>
+      <StyledRetryButton onClick={handleRetry}>RETRY</StyledRetryButton>
+    </StyledRetryContainer>
   );
 };

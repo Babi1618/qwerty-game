@@ -31,6 +31,10 @@ export const Screen = () => {
     findIncentives();
   }, [greatOpen]);
 
+  // useEffect(() => {
+  //   console.log(word, word2);
+  // }, [word2]);
+
   return (
     <StyledScreenContainer>
       <StyledScreenTimerAndPoints>
