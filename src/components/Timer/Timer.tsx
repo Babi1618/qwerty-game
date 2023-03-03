@@ -1,22 +1,13 @@
 import { useEffect, useState } from "react";
 import { useGlobalContext } from "../../context/GlobalContext";
+import { countTime } from "../../utils/timerFunctions";
 
 export const Timer = () => {
   const { seconds, setSeconds, minutes, setMinutes } =
     useGlobalContext() as any;
-  const countTime = () => {
-    setTimeout(() => {
-      if (seconds < 59) {
-        setSeconds((prev: number) => prev + 1);
-      } else {
-        setMinutes((prev: number) => prev + 1);
-        setSeconds(0);
-      }
-    }, 1000);
-  };
-
+    
   useEffect(() => {
-    countTime();
+    countTime(seconds, setSeconds, setMinutes);
   }, [seconds]);
 
   return (

@@ -18,7 +18,7 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
   const [points, setPoints] = useState(0);
   const [seconds, setSeconds] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
-
+  
   useEffect(() => {
     changeLetter(word, letterScreenIndex);
   }, [value]);
@@ -34,16 +34,6 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
       }, 1000);
     }
   };
-  // const handleChangeColor = (i: number) => {
-  //   if (i < value.length) {
-  //     if (value[i] === word[i]) {
-  //       return "ok";
-  //     } else {
-  //       return "error";
-  //     }
-  //   }
-  //   return "";
-  // };
 
   return (
     <GlobalContext.Provider
