@@ -13,11 +13,12 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
   const [letterScreenIndex, setLetterScreenIndex] = useState<number>(0);
   const [value, setValue] = useState([]);
   const [wordScreenIndex, setWordScreenIndex] = useState(0);
-  const word = arrayWords[wordScreenIndex].split("");
+  const word = arrayWords[wordScreenIndex]
+    ? arrayWords[wordScreenIndex].split("")
+    : [];
   const [points, setPoints] = useState(0);
 
   useEffect(() => {
-    console.log(word);
     changeLetter(word, letterScreenIndex);
   }, [value]);
 
@@ -42,7 +43,7 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
     }
     return "";
   };
-  
+
   return (
     <GlobalContext.Provider
       value={{

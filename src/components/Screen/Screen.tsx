@@ -18,7 +18,7 @@ export const Screen = () => {
         <div>timer</div>
         <div>punteggio {points}</div>
       </StyledScreenTimerAndPoints>
-      {wordScreenIndex < arrayWords.length - 1 ? (
+      {wordScreenIndex < arrayWords.length  ? (
         <StyledScreenWords>
           <StyledScreenWord>
             {word.map((el: string, i: number) => {
