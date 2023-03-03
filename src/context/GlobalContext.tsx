@@ -32,16 +32,16 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
       }, 1000);
     }
   };
-  const handleChangeColor = (i: number) => {
-    if (i < value.length) {
-      if (value[i] === word[i]) {
-        return "ok";
-      } else {
-        return "error";
-      }
-    }
-    return "";
-  };
+  // const handleChangeColor = (i: number) => {
+  //   if (i < value.length) {
+  //     if (value[i] === word[i]) {
+  //       return "ok";
+  //     } else {
+  //       return "error";
+  //     }
+  //   }
+  //   return "";
+  // };
 
   return (
     <GlobalContext.Provider
@@ -52,10 +52,11 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
         value,
         setValue,
         wordScreenIndex,
+        setWordScreenIndex, 
         arrayWords,
         points,
         setPoints,
-        handleChangeColor,
+        // handleChangeColor, 
       }}
     >
       {props.children}
