@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useGlobalContext } from "../../context/GlobalContext";
 
 export const Retry = () => {
-  const { setWordScreenIndex, setPoints, minutes, seconds, points } =
+  const { setWordScreenIndex, setPoints, minutes,setMinutes, seconds, setSeconds, points } =
     useGlobalContext() as any;
   const [finalTime, setFinalTime] = useState({ minutes: 0, seconds: 0 });
 
@@ -12,6 +12,9 @@ export const Retry = () => {
   const handleRetry = () => {
     setWordScreenIndex(0);
     setPoints(0);
+    setMinutes(0); 
+    setSeconds(0)
+    setFinalTime({ minutes: 0, seconds: 0 })
   };
   return (
     <div>
