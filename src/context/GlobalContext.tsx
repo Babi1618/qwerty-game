@@ -16,6 +16,8 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
     ? arrayWords[wordScreenIndex].split("")
     : [];
   const [points, setPoints] = useState(0);
+  const [seconds, setSeconds] = useState<number>(0);
+  const [minutes, setMinutes] = useState<number>(0);
 
   useEffect(() => {
     changeLetter(word, letterScreenIndex);
@@ -52,11 +54,15 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
         value,
         setValue,
         wordScreenIndex,
-        setWordScreenIndex, 
+        setWordScreenIndex,
         arrayWords,
         points,
         setPoints,
-        // handleChangeColor, 
+        // handleChangeColor,
+        seconds,
+        setSeconds,
+        minutes,
+        setMinutes,
       }}
     >
       {props.children}

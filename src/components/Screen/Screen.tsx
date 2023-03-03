@@ -1,5 +1,9 @@
 import { useEffect } from "react";
 import { useGlobalContext } from "../../context/GlobalContext";
+import { handleChangeColor } from "../../utils/screenFunctions";
+import { Points } from "../Points/Points";
+import { Retry } from "../Retry/Retry";
+import { Timer } from "../Timer/Timer";
 import {
   StyledScreenContainer,
   StyledScreenLetter,
@@ -9,21 +13,21 @@ import {
 } from "./Screen.styled";
 
 export const Screen = () => {
-  const { wordScreenIndex, arrayWords, word, handleChangeColor, points } =
+  const { wordScreenIndex, arrayWords, word, value } =
     useGlobalContext() as any;
 
   return (
     <StyledScreenContainer>
       <StyledScreenTimerAndPoints>
-        <div>timer</div>
-        <div>punteggio {points}</div>
+        <Timer />
+        <Points />
       </StyledScreenTimerAndPoints>
-      {wordScreenIndex < arrayWords.length  ? (
+      {wordScreenIndex < arrayWords.length ? (
         <StyledScreenWords>
           <StyledScreenWord>
             {word.map((el: string, i: number) => {
               return (
-                <StyledScreenLetter key={i} type={handleChangeColor(i)}>
+                <StyledScreenLetter key={i} type={handleChangeColor(i, value, word)}>
                   {el}
                 </StyledScreenLetter>
               );
@@ -31,7 +35,7 @@ export const Screen = () => {
           </StyledScreenWord>
         </StyledScreenWords>
       ) : (
-        <div>YOU WIN! RETRY? </div>
+        <Retry />
       )}
     </StyledScreenContainer>
   );
