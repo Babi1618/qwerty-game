@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledQwertyGame = styled.div`
+  font-family: "Courier New", Courier, monospace;
   display: flex;
   flex-direction: column;
   background-color: aliceblue;

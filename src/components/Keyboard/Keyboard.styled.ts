@@ -1,16 +1,20 @@
 import styled from "styled-components";
 
 export const StyledKeyboardContainer = styled.div`
-  background-color: lightblue;
-  padding: 50px;
+  border: 1px solid #c5c6c8;
+  border-radius: 0.5rem;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 `;
 
 export const StyledKeyboardGrid = styled.div`
-  background-color: lightcoral;
+  background-color: #c5c6c8;
+  border-radius: 0.5rem;
   display: grid;
   grid-template-columns: repeat(20, 1fr);
-  padding: 10px 0;
-  gap: 10px 0;
+  padding: 5px 0;
+  gap: 5px 0;
   > div {
     grid-column: span 2;
     place-self: center;

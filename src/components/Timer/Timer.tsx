@@ -5,18 +5,18 @@ import { countTime } from "../../utils/timerFunctions";
 export const Timer = () => {
   const { seconds, setSeconds, minutes, setMinutes } =
     useGlobalContext() as any;
-    
+
   useEffect(() => {
     countTime(seconds, setSeconds, setMinutes);
   }, [seconds]);
 
   return (
     <div>
-      <div>Timer:</div>
-      <span>
+      <div className="title">Timer</div>
+      <div>
         {minutes < 10 ? `0${minutes}` : minutes} :{" "}
         {seconds < 10 ? `0${seconds}` : seconds}
-      </span>
+      </div>
     </div>
   );
 };
