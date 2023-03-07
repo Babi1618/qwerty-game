@@ -1,3 +1,4 @@
+import React from "react"
 import { qwertyItalian } from "../../utils/qwertyItaliansLetters";
 import { Button } from "../Button/Button";
 import { StyledKeyboardContainer, StyledKeyboardGrid } from "./Keyboard.styled";

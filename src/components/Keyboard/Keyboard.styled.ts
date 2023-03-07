@@ -14,7 +14,7 @@ export const StyledKeyboardGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(20, 1fr);
   padding: 5px 0;
-  gap: 5px 0;
+  gap: 5px;
   > div {
     grid-column: span 2;
     place-self: center;
