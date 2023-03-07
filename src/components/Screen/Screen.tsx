@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useGlobalContext } from "../../context/GlobalContext";
 import { handleChangeColor } from "../../utils/screenFunctions";
 import { Points } from "../Points/Points";

@@ -57,8 +57,8 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
     for (let i = 0; i < 5; i++) {
       const res = await fetchWord();
       // console.log(res)
-      // result.push(res[0].toUpperCase().split("")[0]);
-      result.push(res[0].toUpperCase())
+      result.push(res[0].toUpperCase().split("")[0]);
+      // result.push(res[0].toUpperCase())
     }
     setArrayWords(result);
   };
@@ -68,10 +68,6 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
       getWords();
     }
   }, [wordScreenIndex]);
-
-  useEffect(() => {
-    // console.log(arrayWords);
-  }, [arrayWords]);
 
   return (
     <GlobalContext.Provider

@@ -1,4 +1,4 @@
-import "./App.css";
+import React from 'react';
 import { QwertyGame } from "./pages/QwertyGame/QwertyGame";
 import { GlobalContextProvider } from "./context/GlobalContext";
 
