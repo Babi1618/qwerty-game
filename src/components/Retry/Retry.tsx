@@ -11,6 +11,7 @@ export const Retry = () => {
     seconds,
     setSeconds,
     points,
+    setArrayWords
   } = useGlobalContext() as any;
   const [finalTime, setFinalTime] = useState({ minutes: 0, seconds: 0 });
 
@@ -18,13 +19,15 @@ export const Retry = () => {
     setFinalTime({ minutes: minutes, seconds: seconds });
   }, []);
 
-  const handleRetry = useCallback(() => {
+  const handleRetry = () => {
+    setArrayWords([""])
     setWordScreenIndex(0);
     setPoints(0);
     setMinutes(0);
     setSeconds(0);
     setFinalTime({ minutes: 0, seconds: 0 });
-  }, []);
+  };
+
   return (
     <StyledRetryContainer>
       <div className="title">YOU WIN! </div>

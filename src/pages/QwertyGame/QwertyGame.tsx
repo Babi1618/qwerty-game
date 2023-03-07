@@ -5,10 +5,7 @@ import { useGlobalContext } from "../../context/GlobalContext";
 import { StyledQwertyGame } from "./QwertyGame.styled";
 
 export const QwertyGame = () => {
-  const { arrayWords } = useGlobalContext() as any;
-  useEffect(() => {
-    // console.log(arrayWords);
-  }, [arrayWords]);
+  const { arrayWords, setArrayWords } = useGlobalContext() as any;
 
   return (
     <StyledQwertyGame>
