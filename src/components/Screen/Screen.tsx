@@ -21,7 +21,7 @@ export const Screen = () => {
   const getRandomInt = (max: number) => {
     return Math.floor(Math.random() * max);
   };
-  // const incentives = ["GREAT!", "WOW", "TOP", "YOU'RE A MASTER", "GO BABY!"];
+
   const findIncentives = () => {
     const incentive = incentives[getRandomInt(incentives.length)];
     setGreat(incentive);
