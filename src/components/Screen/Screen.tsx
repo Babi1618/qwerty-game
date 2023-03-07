@@ -36,6 +36,7 @@ export const Screen = () => {
       <StyledScreenTimerAndPoints>
         <Timer />
         <Points />
+        
       </StyledScreenTimerAndPoints>
       {wordScreenIndex < arrayWords.length ? (
         <StyledScreenWords>
