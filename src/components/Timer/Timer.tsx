@@ -11,19 +11,12 @@ export const Timer = () => {
     setMinutes,
     wordScreenIndex,
     arrayWords,
-    setPoints,
   } = useGlobalContext() as any;
 
   useEffect(() => {
     if (wordScreenIndex < arrayWords.length) {
-      console.log(seconds);
       countTime(seconds, setSeconds, setMinutes);
-    } else {
-      // setSeconds(0);
-      // setMinutes(0);
-      // setPoints(0);
-    }
-    // countTime(seconds, setSeconds, setMinutes);
+    } 
   }, [seconds]);
 
   return (
