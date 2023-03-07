@@ -32,7 +32,7 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
 
   const changeLetter = useCallback(
     (arr: string[], letterScreenIndex: number) => {
-      if (arr.length === letterScreenIndex && arr.length!==0) {
+      if (arr.length === letterScreenIndex && arr.length !== 0) {
         setGreatOpen(true);
         setLetterScreenIndex(0);
         setValue([]);
@@ -53,26 +53,26 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
     return w;
   };
   const getWords = async () => {
-    const result =[]
-    for (let i=0; i<5; i++){
+    const result = [];
+    for (let i = 0; i < 5; i++) {
       const res = await fetchWord();
-      console.log(res);
-      result.push(res[0])
+      // console.log(res)
+      // result.push(res[0].toUpperCase().split("")[0]);
+      result.push(res[0].toUpperCase())
     }
-    // console.log(result)
-    setArrayWords(result)
+    setArrayWords(result);
   };
 
   useEffect(() => {
-    getWords()
-  }, []);
+    if (wordScreenIndex === 0) {
+      getWords();
+    }
+  }, [wordScreenIndex]);
+
   useEffect(() => {
-    // setTimeout(() => {
-    //   setArrayWords(["QWE", "W", "E", "R"]);
-    // }, 1000);
-    // getWords()
-    // console.log(arrayWords)
+    // console.log(arrayWords);
   }, [arrayWords]);
+
   return (
     <GlobalContext.Provider
       value={{
@@ -93,6 +93,7 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
         setMinutes,
         greatOpen,
         setGreatOpen,
+        setArrayWords
         // word, setWord
       }}
     >

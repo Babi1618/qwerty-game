@@ -13,7 +13,7 @@ import {
 } from "./Screen.styled";
 
 export const Screen = () => {
-  const { wordScreenIndex, arrayWords, word, value, greatOpen } =
+  const { wordScreenIndex, arrayWords, word, setArrayWords, value, greatOpen } =
     useGlobalContext() as any;
 
   const [great, setGreat] = useState("");
@@ -31,9 +31,9 @@ export const Screen = () => {
     findIncentives();
   }, [greatOpen]);
 
-  // useEffect(() => {
-  //   console.log(word, word2);
-  // }, [word2]);
+  useEffect(() => {
+    // console.log(word);
+  }, [word]);
 
   return (
     <StyledScreenContainer>
