@@ -12,7 +12,7 @@ export const Retry = () => {
     seconds,
     setSeconds,
     points,
-    setArrayWords
+    setArrayWords,
   } = useGlobalContext() as any;
   const [finalTime, setFinalTime] = useState({ minutes: 0, seconds: 0 });
 
@@ -21,7 +21,7 @@ export const Retry = () => {
   }, []);
 
   const handleRetry = () => {
-    setArrayWords([""])
+    setArrayWords([""]);
     setWordScreenIndex(0);
     setPoints(0);
     setMinutes(0);
@@ -34,8 +34,13 @@ export const Retry = () => {
       <Confetti />
       <div className="title">YOU WIN! </div>
       <div>
-        YOU MAKE {points} POINTS IN {finalTime.minutes} MINUTES AND{" "}
-        {finalTime.seconds} SECONDS!
+        YOU MAKE {points} POINTS IN
+        <span>
+          {minutes
+            ? `${finalTime.minutes} MINUTE${minutes > 1 ? `S` : ``} AND `
+            : ``}
+        </span>
+        <span>{` ${finalTime.seconds} SECOND${seconds > 1 ? `S` : ``} `}</span>
       </div>
       <StyledRetryButton onClick={handleRetry}>RETRY</StyledRetryButton>
     </StyledRetryContainer>

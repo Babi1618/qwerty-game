@@ -17,7 +17,6 @@ export const Screen = () => {
   const { wordScreenIndex, arrayWords, word, setArrayWords, value, greatOpen } =
     useGlobalContext() as any;
   const [great, setGreat] = useState("");
-
   const getRandomInt = (max: number) => {
     return Math.floor(Math.random() * max);
   };

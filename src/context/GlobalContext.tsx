@@ -9,7 +9,6 @@ import {
 export const GlobalContext = createContext({});
 
 export const GlobalContextProvider = (props: PropsWithChildren) => {
-  // const arrayWords = ["QWE", "W", "E", "R"];
   const [arrayWords, setArrayWords] = useState([""]);
   const [letterScreenIndex, setLetterScreenIndex] = useState<number>(0);
   const [value, setValue] = useState<string[]>([]);
@@ -56,7 +55,6 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
     const result = [];
     for (let i = 0; i < 5; i++) {
       const res = await fetchWord();
-      // console.log(res)
       result.push(res[0].toUpperCase().split("")[0]);
       // result.push(res[0].toUpperCase())
     }
@@ -89,7 +87,7 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
         setMinutes,
         greatOpen,
         setGreatOpen,
-        setArrayWords
+        setArrayWords,
         // word, setWord
       }}
     >

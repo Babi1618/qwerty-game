@@ -1,13 +1,29 @@
 import { useEffect, useState } from "react";
 import { useGlobalContext } from "../../context/GlobalContext";
 import { countTime } from "../../utils/timerFunctions";
+import { StyledScreenTimerAndPoints } from "../Screen/Screen.styled";
 
 export const Timer = () => {
-  const { seconds, setSeconds, minutes, setMinutes } =
-    useGlobalContext() as any;
+  const {
+    seconds,
+    setSeconds,
+    minutes,
+    setMinutes,
+    wordScreenIndex,
+    arrayWords,
+    setPoints,
+  } = useGlobalContext() as any;
 
   useEffect(() => {
-    countTime(seconds, setSeconds, setMinutes);
+    if (wordScreenIndex < arrayWords.length) {
+      console.log(seconds);
+      countTime(seconds, setSeconds, setMinutes);
+    } else {
+      // setSeconds(0);
+      // setMinutes(0);
+      // setPoints(0);
+    }
+    // countTime(seconds, setSeconds, setMinutes);
   }, [seconds]);
 
   return (
