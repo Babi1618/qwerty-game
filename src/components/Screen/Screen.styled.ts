@@ -4,7 +4,7 @@ export const StyledScreenContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #c5c6c8;
+  box-shadow: -3px -3px 7px #c5c6c8, 2px 2px 5px rgb(94 104 121 / 29%);
   border-radius: 0.5rem;
   padding: 20px;
   gap: 30px;
@@ -46,3 +46,12 @@ export const StyledScreenLetter = styled.span<any>`
   color: ${({ type }) =>
     type === "ok" ? "green" : type === "error" ? "red" : ""};
 `;
+
+export const StyledGreatContainer = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+`;
+export const StyledGreatContent= styled.div``

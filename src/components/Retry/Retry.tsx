@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useGlobalContext } from "../../context/GlobalContext";
 import { StyledRetryButton, StyledRetryContainer } from "./Retry.styled";
+import Confetti from "react-confetti";
 
 export const Retry = () => {
   const {
@@ -30,6 +31,7 @@ export const Retry = () => {
 
   return (
     <StyledRetryContainer>
+      <Confetti />
       <div className="title">YOU WIN! </div>
       <div>
         YOU MAKE {points} POINTS IN {finalTime.minutes} MINUTES AND{" "}
