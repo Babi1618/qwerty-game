@@ -1,14 +1,18 @@
 export const handleChangeColor = (
   i: number,
   value: string[],
-  word: string[]
+  word: string[],
+  greatOpen: boolean
 ) => {
-  if (i < value.length) {
-    // console.log(value, word);
-    if (value[i] === word[i]) {
-      return "ok";
-    } else {
-      return "error";
+  if (greatOpen) {
+    return "ok";
+  } else {
+    if (i < value.length) {
+      if (value[i] === word[i]) {
+        return "ok";
+      } else {
+        return "error";
+      }
     }
   }
   return "";

@@ -31,10 +31,6 @@ export const Screen = () => {
     findIncentives();
   }, [greatOpen]);
 
-  useEffect(() => {
-    // console.log(word);
-  }, [word]);
-
   return (
     <StyledScreenContainer>
       <StyledScreenTimerAndPoints>
@@ -48,7 +44,7 @@ export const Screen = () => {
               return (
                 <StyledScreenLetter
                   key={i}
-                  type={handleChangeColor(i, value, word)}
+                  type={handleChangeColor(i, value, word, greatOpen)}
                 >
                   {el}
                 </StyledScreenLetter>
