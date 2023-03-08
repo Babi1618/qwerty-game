@@ -1,4 +1,3 @@
-import { useCallback, useEffect, useState } from "react";
 import { useGlobalContext } from "../../context/GlobalContext";
 import { StyledRetryButton, StyledRetryContainer } from "./Retry.styled";
 import Confetti from "react-confetti";
@@ -14,11 +13,6 @@ export const Retry = () => {
     points,
     setArrayWords,
   } = useGlobalContext() as any;
-  const [finalTime, setFinalTime] = useState({ minutes: 0, seconds: 0 });
-
-  useEffect(() => {
-    setFinalTime({ minutes: minutes, seconds: seconds });
-  }, []);
 
   const handleRetry = () => {
     setArrayWords([""]);
@@ -26,7 +20,6 @@ export const Retry = () => {
     setPoints(0);
     setMinutes(0);
     setSeconds(0);
-    setFinalTime({ minutes: 0, seconds: 0 });
   };
 
   return (
@@ -37,10 +30,10 @@ export const Retry = () => {
         YOU MAKE {points} POINTS IN
         <span>
           {minutes
-            ? ` ${finalTime.minutes} MINUTE${minutes > 1 ? `S` : ``} AND `
+            ? ` ${minutes} MINUTE${minutes > 1 ? `S` : ``} AND `
             : ``}
         </span>
-        <span>{` ${finalTime.seconds} SECOND${seconds > 1 ? `S` : ``} `}</span>
+        <span>{` ${seconds} SECOND${seconds > 1 ? `S` : ``} `}</span>
       </div>
       <StyledRetryButton onClick={handleRetry}>RETRY</StyledRetryButton>
     </StyledRetryContainer>

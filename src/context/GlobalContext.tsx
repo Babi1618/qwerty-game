@@ -18,6 +18,7 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
   const [seconds, setSeconds] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
   const [greatOpen, setGreatOpen] = useState<boolean>(false);
+  // const [result, setResult] = useState<any>({});
 
   useEffect(() => {
     if (wordScreenIndex < arrayWords.length) {
@@ -87,6 +88,7 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
         greatOpen,
         setGreatOpen,
         setArrayWords,
+   
       }}
     >
       {props.children}
