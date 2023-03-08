@@ -29,9 +29,7 @@ export const Retry = () => {
       <div>
         YOU MAKE {points} POINTS IN
         <span>
-          {minutes
-            ? ` ${minutes} MINUTE${minutes > 1 ? `S` : ``} AND `
-            : ``}
+          {minutes ? ` ${minutes} MINUTE${minutes > 1 ? `S` : ``} AND ` : ``}
         </span>
         <span>{` ${seconds} SECOND${seconds > 1 ? `S` : ``} `}</span>
       </div>

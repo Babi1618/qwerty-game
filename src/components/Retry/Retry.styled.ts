@@ -9,6 +9,16 @@ export const StyledRetryContainer = styled.div`
     font-size: 18px;
     font-weight: 800;
   }
+  animation-name: example;
+  animation-duration: 1s;
+  @keyframes example {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 export const StyledRetryButton = styled.button`
