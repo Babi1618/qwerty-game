@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useGlobalContext } from "../../context/GlobalContext";
 import { incentives } from "../../utils/incentives";
 import { handleChangeColor } from "../../utils/screenFunctions";
@@ -15,21 +15,21 @@ import {
   StyledScreenWords,
 } from "./Screen.styled";
 export const Screen = () => {
-  const { wordScreenIndex, arrayWords, word, setArrayWords, value, greatOpen } =
+  const { wordScreenIndex, arrayWords, word, value, greatOpen } =
     useGlobalContext() as any;
   const [great, setGreat] = useState("");
   const getRandomInt = (max: number) => {
     return Math.floor(Math.random() * max);
   };
 
-  const findIncentives = () => {
+  const findIncentives = useCallback(() => {
     const incentive = incentives[getRandomInt(incentives.length)];
     setGreat(incentive);
-  };
+  }, []);
 
   useEffect(() => {
     findIncentives();
-  }, [greatOpen]);
+  }, [findIncentives]);
 
   return (
     <>

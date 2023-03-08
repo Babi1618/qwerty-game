@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useGlobalContext } from "../../context/GlobalContext";
 import { countTime } from "../../utils/timerFunctions";
-import { StyledScreenTimerAndPoints } from "../Screen/Screen.styled";
 
 export const Timer = () => {
   const {
