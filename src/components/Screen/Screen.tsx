@@ -29,7 +29,7 @@ export const Screen = () => {
 
   useEffect(() => {
     findIncentives();
-  }, [findIncentives]);
+  }, [findIncentives, greatOpen]);
 
   return (
     <>

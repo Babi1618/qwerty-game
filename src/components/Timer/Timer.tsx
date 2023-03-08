@@ -15,7 +15,7 @@ export const Timer = () => {
   useEffect(() => {
     if (wordScreenIndex < arrayWords.length) {
       countTime(seconds, setSeconds, setMinutes);
-    } 
+    }
   }, [seconds]);
 
   return (
