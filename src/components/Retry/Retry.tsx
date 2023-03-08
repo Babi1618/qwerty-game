@@ -27,7 +27,7 @@ export const Retry = () => {
       <Confetti />
       <div className="title">YOU WIN! </div>
       <div>
-        YOU MAKE {points} POINTS IN
+        YOU SCORED {points} POINTS IN
         <span>
           {minutes ? ` ${minutes} MINUTE${minutes > 1 ? `S` : ``} AND ` : ``}
         </span>
