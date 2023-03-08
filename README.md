@@ -1,5 +1,7 @@
 HI! WELCOME TO MY QWERTY GAME (only for desktop)
 
+You can play here: https://main--qwerty-game.netlify.app/
+
 Here the #RULES of this #CHALLENGE: 
 We have to create a #WEB-APP in which there is a keyboard layout and a word to write. 
 The web app reads the keys pressed by the player: for each correct letter the score increases by 1, for each wrong letter the score decreases by 1. 
