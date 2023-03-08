@@ -55,8 +55,8 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
     const result = [];
     for (let i = 0; i < 5; i++) {
       const res = await fetchWord();
-      result.push(res[0].toUpperCase().split("")[0]); // Use it for doing tests
-      // result.push(res[0].toUpperCase())
+      // result.push(res[0].toUpperCase().split("")[0]); // Use it for doing tests
+      result.push(res[0].toUpperCase());
     }
     setArrayWords(result);
   };
@@ -87,7 +87,6 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
         greatOpen,
         setGreatOpen,
         setArrayWords,
-   
       }}
     >
       {props.children}
